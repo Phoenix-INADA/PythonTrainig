@@ -57,6 +57,8 @@ def process_data(initial_val, *args, multiplier=1, **kwargs):
         result = initial_val
         for val in gen:
             result = calc(result, val)
+        for val in gen:
+            result = calc(result, val)
 
         # 3. with 文によるファイル書き込み
         with open("output.txt", "w", encoding="utf-8") as f:

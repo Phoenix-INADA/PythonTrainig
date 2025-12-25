@@ -1,0 +1,10 @@
+{
+    "servers": {
+        "my-local-tool": {
+            "command": "/home/inada/work/python/pysample/.venv/bin/python",
+            "args": [
+                "/home/inada/work/python/pysample/my_server.py"
+            ]
+        }
+    },
+}

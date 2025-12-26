@@ -71,8 +71,10 @@ def process_data(initial_val, *args, multiplier=1, **kwargs):
 
     except ZeroDivisionError as e:
         print(f"Error: ゼロ除算が発生しました - {e}")
+        raise
     except Exception as e:
         print(f"Unexpected Error: {e}")
+        raise
     finally:
         print("Processing finished.")
 
@@ -88,6 +90,8 @@ if __name__ == "__main__":
         print(f"num({num}):")
     # 関数の呼び出し
     # *argsにstackを、multiplierに2を、ラムダ式をkwargsに渡す
-    final_score = process_data(100, *stack, multiplier=2, calc=lambda a, b: a + b)
-
-    print(f"Final Score: {final_score}")
+    try:
+        final_score = process_data(100, *stack, multiplier=2, calc=lambda a, b: a + b)
+        print(f"Final Score: {final_score}")
+    except Exception:
+        pass

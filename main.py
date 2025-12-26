@@ -81,7 +81,8 @@ if __name__ == "__main__":
 
     # イテレータと特殊メソッド (__len__) の利用
     print(f"Stack size: {len(stack)}")
-
+    for num in stack:
+        print("num({num}):")
     # 関数の呼び出し
     # *argsにstackを、multiplierに2を、ラムダ式をkwargsに渡す
     final_score = process_data(100, *stack, multiplier=2, calc=lambda a, b: a + b)
